@@ -7,12 +7,30 @@
 // name + " does not play banjo"
 // Names given are always valid strings.
 
+//Solution 1
 public class Banjo {
   public static String areYouPlayingBanjo(String name) {
     char firstLetter = name.charAt(0);
     char r = 'r';
     char R = 'R';
     if (firstLetter == r || firstLetter == R){
+      return name + " plays banjo";
+    } else {
+      return name + " does not play banjo";
+    }
+  }
+}
+
+//Solution 2
+import java.util.List;
+import java.util.ArrayList;
+public class Banjo {
+  public static String areYouPlayingBanjo(String name) {
+    char firstLetter = name.charAt(0);
+    List<Character> listOfChars = new ArrayList<>();
+    listOfChars.add('r');
+    listOfChars.add('R');
+    if (listOfChars.contains(firstLetter)){
       return name + " plays banjo";
     } else {
       return name + " does not play banjo";
