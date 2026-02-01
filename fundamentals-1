@@ -64,3 +64,11 @@ public class BasicOperations
     return result;
   }
 }
+
+//Write a function which converts the input string to uppercase.
+class Upper {
+    public static String makeUpperCase(String str) {
+        String upperCase = str.toUpperCase();
+        return upperCase;
+    }
+}
