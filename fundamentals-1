@@ -81,3 +81,39 @@ class YesOrNo
   }
   
 }
+
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+// For Java, those integers will come as double precision (long).
+// For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+class Kata{
+  public static long sumTwoSmallestNumbers(long[] numbers) {
+    
+    long max = 0;
+    
+      for (int i = 0; i<numbers.length; i++){
+         max = Math.max(max, numbers[i]);
+      }
+    
+    long min1 = max;
+    long min2 = max;
+    boolean continuedOnce = false;
+    
+    for (int i=0; i<numbers.length; i++){
+      min1 = Math.min(min1, numbers[i]);
+    }
+    
+    for(int i=0; i < numbers.length; i++){
+      if (numbers[i] == min1 && !continuedOnce){
+        continuedOnce = true;
+        continue;
+      }
+      
+      min2 = Math.min(min2, numbers[i]);
+    }
+    
+    long sum = min1 + min2;
+    return sum; 
+  }             
+}
